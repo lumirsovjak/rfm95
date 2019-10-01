@@ -1,0 +1,3 @@
+echo "Tento radek pridej na konec souboru" >> muj_soubor
+
+bacha, musi byt >> a ne > jinak se soubor prepise jen tim jednim radkem
