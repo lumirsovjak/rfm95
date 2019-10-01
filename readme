@@ -1,0 +1,21 @@
+2019 říjen
+soustredime tu soubory pro instalace a zalohy
+
+kod pro arduino s TPL5110
+adr1 adr2 adr3 prepisuj
+nastav napeti U
+
+kod pro raspberry
+tri termostaty
+tri baterie
+tri heartbeat
+zmen vzdy IP adresy
+(mozna zautomatizovat z jednoho mista?)
+nakonec vzdy make!
+
+dopln popis instalace podpory pro I2C
+
+dopln popis instalace pevne IP
+dopln popis instalace openvpn a generovani klicu a jejich umisteni
+
+tak aby tento info zdroj stacil na celou instalaci RPi
