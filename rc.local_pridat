@@ -1,0 +1,3 @@
+/bin/bash /home/pi/script/mail.sh &
+
+/usr/bin/screen -dmS lora /home/pi/single_chan_pkt_fwd/single_chan_pkt_fwd &
