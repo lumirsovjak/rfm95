@@ -1,5 +1,5 @@
 /*******************************************************************************
- *
+ * 
  * Copyright (c) 2015 Thomas Telkamp
  *
  * All rights reserved. This program and the accompanying materials
