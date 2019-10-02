@@ -16,4 +16,7 @@ main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
 
 base64.o: base64.c
-	$(CC) $(CFLAGS) base64.c	
+	$(CC) $(CFLAGS) base64.c
+
+clean:
+	rm *.o single_chan_pkt_fwd
