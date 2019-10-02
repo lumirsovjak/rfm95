@@ -30,6 +30,8 @@ using namespace std;
 #include <wiringPi.h>
 #include <wiringPiSPI.h>
 
+#define IP "192.168.1.182"
+
 typedef bool boolean;
 typedef unsigned char byte;
 
@@ -254,23 +256,23 @@ boolean receivePkt(char *payload)
 	string prikazB2 = "";
 	string prikazB3 = "";
 
-	prikazR1 = prikazR1 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Reliability1;"; //kontrola toku dat
-	prikazR2 = prikazR2 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Reliability2;"; //kontrola toku dat
-	prikazR3 = prikazR3 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Reliability3;"; //kontrola toku dat
+	prikazR1 = prikazR1 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Reliability1;"; //kontrola toku dat
+	prikazR2 = prikazR2 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Reliability2;"; //kontrola toku dat
+	prikazR3 = prikazR3 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Reliability3;"; //kontrola toku dat
 	prikazR1 = prikazR1 + "1"; //do kontrolnich bodu zapisuje jednicky, climatix je nuluje
 	prikazR2 = prikazR2 + "1"; //do kontrolnich bodu zapisuje jednicky, climatix je nuluje
 	prikazR3 = prikazR3 + "1"; //do kontrolnich bodu zapisuje jednicky, climatix je nuluje
 
-	prikazT1 = prikazT1 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Termostat1;";
-	prikazT2 = prikazT2 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Termostat2;";
-	prikazT3 = prikazT3 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Termostat3;";
+	prikazT1 = prikazT1 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Termostat1;";
+	prikazT2 = prikazT2 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Termostat2;";
+	prikazT3 = prikazT3 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Termostat3;";
 	prikazT1 = prikazT1 + payload[4] + payload[5] + payload[6];
 	prikazT2 = prikazT2 + payload[4] + payload[5] + payload[6];
 	prikazT3 = prikazT3 + payload[4] + payload[5] + payload[6];
 	
-	prikazB1 = prikazB1 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Baterie1;"; //kontrola napeti
-	prikazB2 = prikazB2 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Baterie2;"; //kontrola napeti
-	prikazB3 = prikazB3 + "curl --user ADMIN:SBTAdmin! \"http://192.168.17.3/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Baterie3;"; //kontrola napeti
+	prikazB1 = prikazB1 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Baterie1;"; //kontrola napeti
+	prikazB2 = prikazB2 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Baterie2;"; //kontrola napeti
+	prikazB3 = prikazB3 + "curl --user ADMIN:SBTAdmin! \"http://" + IP + "/JSON.HTML?FN=Write&PIN=1000&LNG=1&ID=T_Baterie3;"; //kontrola napeti
 	
 	//prevod payload na char, protoze teplota je char rovnou a baterky ne, mozna predelat i v arduinu? taky baterka na char
 	payload[17] = 48 + payload[17];
