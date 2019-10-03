@@ -1,5 +1,5 @@
 #!/bin/bash
-echo " " >> jmeno_souboru #aby to zacalo na novem radku
 echo "Co chces pridat a udela to novy radek" >> jmeno_souboru
 pozor na >>, kdyz das jen jeden tento znak, soubor se prepise
 a script premen na spustitelny chmod +x jmeno_souboru # +x je asi jako eXecute
+pro systemove soubory pouzij sudo ./zapis
