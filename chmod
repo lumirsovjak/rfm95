@@ -1,0 +1,3 @@
+chmod +x jmeno_souboru
+udela spustitelny soubor
+spust ./jmeno_souboru
